@@ -2,18 +2,18 @@ function main() {
   const counter = document.querySelector('.counter');
   let count = sessionStorage.getItem('click') || 0;
 
-  function getCount() {
-  counter.textContent = count;
+  function setCountToDOM() {
+    counter.textContent = count;
   };
 
   window.addEventListener('click', () => {
     count++;
     sessionStorage.setItem('click', count);
 
-    getCount();    
+    setCountToDOM();    
   });
 
-  getCount();
+  setCountToDOM();
 }
 
 window.addEventListener('load', main); 
